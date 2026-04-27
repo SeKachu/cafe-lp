@@ -3,18 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cafe Lumière | 久留米の小さなカフェ</title>
-  <meta name="description" content="Cafe Lumièreは、こだわりのコーヒーと手作りスイーツを楽しめる街の小さなカフェです。" />
+  <title>Cafe Kurume Blend | 久留米のカフェ</title>
+  <meta name="description" content="Cafe Kurume Blendは、久留米でこだわりのコーヒーと手作りスイーツを楽しめるカフェです。" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <input type="checkbox" id="menu-toggle" />
+
   <header>
     <div class="container header-inner">
-      <a href="#" class="logo">Cafe Lumière</a>
+      <a href="#" class="logo">Cafe Kurume Blend</a>
+
+      <label for="menu-toggle" class="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#menu">Menu</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#access">Access</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -22,16 +33,19 @@
     </div>
   </header>
 
+  <a href="#contact" class="fixed-reserve">予約する</a>
+
   <main>
     <section class="hero">
-      <div class="container">
+      <div class="container fade-in">
+        <p class="hero-label">Specialty Coffee & Homemade Sweets</p>
         <h1>日常に、少しだけ<br />特別なコーヒーを。</h1>
         <p>香り豊かな一杯と、手作りスイーツでゆっくり過ごせる街のカフェ。</p>
         <a href="#menu" class="button">メニューを見る</a>
       </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
       <div class="container about-grid">
         <div class="about-text">
           <div class="section-title left">
@@ -39,7 +53,7 @@
             <h2>ゆっくり深呼吸できる場所</h2>
           </div>
           <p>
-            Cafe Lumièreは、忙しい毎日の中でほっと一息つける小さなカフェです。
+            Cafe Kurume Blendは、忙しい毎日の中でほっと一息つける小さなカフェです。
             丁寧に淹れたコーヒーと、季節の素材を使ったスイーツをご用意しています。
           </p>
           <p>
@@ -47,13 +61,17 @@
             あなたらしいカフェ時間をお楽しみください。
           </p>
         </div>
+
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80" alt="落ち着いた雰囲気のカフェ店内" />
+          <img
+            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80"
+            alt="カフェ店内"
+          />
         </div>
       </div>
     </section>
 
-    <section id="menu" class="menu">
+    <section id="menu" class="menu fade-in">
       <div class="container">
         <div class="section-title">
           <span>MENU</span>
@@ -62,7 +80,11 @@
 
         <div class="menu-grid">
           <article class="menu-card">
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80" alt="ハンドドリップコーヒー" />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=70"
+              alt="ハンドドリップコーヒー"
+            />
             <div class="menu-card-content">
               <h3>ハンドドリップコーヒー</h3>
               <p>豆の香りを引き出した、すっきり飲みやすい定番の一杯。</p>
@@ -71,7 +93,11 @@
           </article>
 
           <article class="menu-card">
-            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80" alt="チーズケーキ" />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=70"
+              alt="濃厚チーズケーキ"
+            />
             <div class="menu-card-content">
               <h3>濃厚チーズケーキ</h3>
               <p>なめらかな口どけとほどよい酸味が人気の手作りスイーツ。</p>
@@ -80,7 +106,11 @@
           </article>
 
           <article class="menu-card">
-            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="カフェラテ" />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=70"
+              alt="カフェラテ"
+            />
             <div class="menu-card-content">
               <h3>カフェラテ</h3>
               <p>ミルクの甘みとエスプレッソのコクを楽しめる一杯。</p>
@@ -91,65 +121,105 @@
       </div>
     </section>
 
-    <section class="features">
+    <section id="news" class="news fade-in">
       <div class="container">
         <div class="section-title">
-          <span>POINT</span>
-          <h2>選ばれる理由</h2>
+          <span>NEWS</span>
+          <h2>お知らせ</h2>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="icon">☕</div>
-            <h3>こだわりの豆</h3>
-            <p>毎日飲みたくなる、香り高く飲みやすいコーヒーを提供します。</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">🍰</div>
-            <h3>手作りスイーツ</h3>
-            <p>季節ごとに変わるスイーツを、店内で丁寧に仕上げています。</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">🌿</div>
-            <h3>落ち着く空間</h3>
-            <p>読書や作業にも使いやすい、ゆったり過ごせる空間です。</p>
-          </div>
+        <div class="news-list">
+          <article>
+            <time>2026.04.27</time>
+            <p>春限定のいちごタルトを販売開始しました。</p>
+          </article>
+          <article>
+            <time>2026.04.15</time>
+            <p>ゴールデンウィーク期間中の営業時間を更新しました。</p>
+          </article>
+          <article>
+            <time>2026.04.01</time>
+            <p>新作ブレンドコーヒーの提供を開始しました。</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="access" class="access">
+    <section id="faq" class="faq fade-in">
+      <div class="container">
+        <div class="section-title">
+          <span>FAQ</span>
+          <h2>よくある質問</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>予約はできますか？</summary>
+            <p>はい。お電話またはお問い合わせフォームからご予約いただけます。</p>
+          </details>
+          <details>
+            <summary>Wi-Fiはありますか？</summary>
+            <p>店内で無料Wi-Fiをご利用いただけます。</p>
+          </details>
+          <details>
+            <summary>テイクアウトはできますか？</summary>
+            <p>ドリンクと一部スイーツはテイクアウト可能です。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="access fade-in">
       <div class="container access-grid">
         <div>
           <div class="section-title left">
             <span>ACCESS</span>
             <h2>店舗情報</h2>
           </div>
+
           <ul class="info-list">
-            <li><strong>住所：</strong>福岡県久留米市〇〇町1-2-3</li>
+            <li><strong>住所：</strong>福岡県久留米市東町1-2-3</li>
             <li><strong>営業時間：</strong>10:00 - 19:00</li>
             <li><strong>定休日：</strong>水曜日</li>
             <li><strong>電話：</strong>0942-00-0000</li>
           </ul>
         </div>
-        <div class="map-placeholder">Google Mapをここに埋め込み</div>
+
+        <div class="map-box">
+          <iframe
+            title="Google Map"
+            src="https://www.google.com/maps?q=久留米駅&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" class="contact fade-in">
       <div class="container">
         <div class="section-title">
           <span>CONTACT</span>
           <h2>ご予約・お問い合わせ</h2>
         </div>
-        <p>席のご予約やメニューについてのお問い合わせは、お電話またはSNSからお気軽にどうぞ。</p>
-        <a href="tel:0942000000" class="button">電話で問い合わせる</a>
+
+        <form class="contact-form">
+          <input type="text" placeholder="お名前" required />
+          <input type="email" placeholder="メールアドレス" required />
+          <input type="tel" placeholder="電話番号" />
+          <textarea placeholder="お問い合わせ内容" required></textarea>
+          <button type="submit">送信する</button>
+        </form>
+
+        <p class="form-note">※デモサイトのため、送信機能は実装していません。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Cafe Lumière. All Rights Reserved.</p>
+    <p>ポートフォリオ用に制作したデモサイトです。</p>
+    <p>&copy; 2026 Cafe Kurume Blend. All Rights Reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
